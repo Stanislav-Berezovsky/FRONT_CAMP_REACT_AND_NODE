@@ -1,14 +1,19 @@
-import React, {Component} from 'react';
-import {renderToString}  from 'react-dom/server'
 import express from 'express';
-import App from '../App';
+import bodyParser from 'body-parser';
+import React, {Component} from 'react';
+import {renderToString} from 'react-dom/server'
+import App from '../components/App';
 import serverTemplate from './serverTemplate';
 
 
 const app = express();
 
-app.get('/', function(req, res) {
+const router = express.Router();
+
+app.use(bodyParser.json());
+app.set('port', 3001);
+app.get('/', function (req, res) {
     res.send(serverTemplate(renderToString(<App/>)));
 })
 
-app.listen(3001);
+app.listen(app.get('port'));

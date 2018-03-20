@@ -8,6 +8,7 @@ export default body => `
         </head>
         <body>
             <div id="root">${body}</div>
+            <script type="text/javascript" src="static/js/main.js"></script>
         </body>
     </html>
 `

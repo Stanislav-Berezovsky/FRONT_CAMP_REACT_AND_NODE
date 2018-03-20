@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Switch, Route} from 'react-router-dom';
+//import {Switch, Route} from 'react-router-dom';
 import {renderRoutes} from "react-router-config";
-import routes from '../routes';
+//import routes from '../routes';
 
 // class App extends Component {
 //     constructor(props) {
@@ -19,7 +19,6 @@ import routes from '../routes';
 // }
 const App = ({route}) => (
     <div>
-        <h1>Root</h1>
         {/* child routes won't render without this */}
         {renderRoutes(route.routes)}
     </div>

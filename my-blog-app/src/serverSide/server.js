@@ -5,7 +5,6 @@ import {renderToString} from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import {renderRoutes} from 'react-router-config';
 import routes from '../routes';
-import {App} from '../components/App';
 import serverTemplate from './serverTemplate';
 
 
@@ -17,7 +16,7 @@ app.use(bodyParser.json());
 app.set('port', 3001);
 
 app.get('*', function (req, res) {
-    const context = {}
+    const context = {};
 
     res.send(serverTemplate(renderToString(
         <StaticRouter location={req.url} context={context}>
